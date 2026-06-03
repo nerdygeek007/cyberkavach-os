@@ -7,4 +7,4 @@ State and access control infrastructure for the CyberKavach Club. Next.js / Expr
 - **Client & I/O:** Next.js + Tailwind (Role-specific dashboard routing)
 - **Telemetry & Media:** Socket.io (Real-time tracking) + Puppeteer (Automated cert generation)
 
-**Maintainers:** Maharshi & Henisha
+**Maintainers:** Maharshi & Palak
