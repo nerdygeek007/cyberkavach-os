@@ -5,8 +5,8 @@ import helmet from 'helmet';
 import dotenv from 'dotenv';
 import { dbPool } from './db'; 
 import authRoutes from './routes/auth.routes';
-// Add this to your top imports in backend/src/server.ts
 import eventRoutes from './routes/event.routes';
+import systemRoutes from './routes/system.routes';
 
 dotenv.config();
 
@@ -23,18 +23,36 @@ const PORT = process.env.PORT || 5000;
 // ZERO-TRUST MIDDLEWARE BOUNDARIES
 // ==========================================
 app.use(helmet()); 
+
+// EXPANDED CORS VIP LIST
+const allowedOrigins = [
+    'http://localhost:3000',
+    'http://172.29.176.1:3000' // Your specific network IP
+];
+
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        
+        if (allowedOrigins.indexOf(origin) === -1) {
+            var msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    },
     credentials: true 
 }));
+
 app.use(express.json()); 
 
 // ==========================================
 // ROUTER MOUNTS
 // ==========================================
 app.use('/api/v1/auth', authRoutes);
-// Mount below your v1/auth route system
 app.use('/api/v1/events', eventRoutes);
+app.use('/api/v1/system', systemRoutes);
+
 // ==========================================
 // SYSTEM HEALTH & DB VERIFICATION
 // ==========================================
@@ -64,4 +82,5 @@ app.get('/api/v1/health', async (req: Request, res: Response) => {
 app.listen(PORT, () => {
     console.log(`[*] CyberKavach OS Backend running on port ${PORT}`);
     console.log(`[*] Awaiting requests at http://localhost:${PORT}/api/v1/health`);
+
 });

@@ -12,6 +12,21 @@ export interface AuthRequest extends Request {
 }
 
 export const requireAuth = (req: AuthRequest, res: Response, next: NextFunction): void => {
+    // 🚨 THE DEVELOPER BYPASS 🚨
+    // We inject a fake Super Admin payload that perfectly matches your custom interface.
+    if (process.env.BYPASS_AUTH === 'true') {
+        req.user = { 
+            id: 'ghost-dev-id', 
+            role: 'Super Admin',
+            clearance: 5, // Assuming 5 is max clearance
+            account_status: 'ACTIVE' 
+        };
+        console.log('🔓 [DEV BYPASS] Security checkpoint skipped.');
+        next();
+        return;
+    }
+
+    // --- STANDARD SECURITY LOGIC ---
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -41,6 +56,12 @@ export const requireAuth = (req: AuthRequest, res: Response, next: NextFunction)
 // Passing ['Super Admin', 'Club Coordinator'] creates an absolute access boundary
 export const requireRole = (allowedRoles: string[]) => {
     return (req: AuthRequest, res: Response, next: NextFunction): void => {
+        // 🚨 DEVELOPER BYPASS 🚨
+        if (process.env.BYPASS_AUTH === 'true') {
+            next();
+            return;
+        }
+
         if (!req.user) {
             res.status(401).json({ error: 'SYSTEM_HALT: Unauthenticated request block' });
             return;

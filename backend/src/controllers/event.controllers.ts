@@ -1,5 +1,5 @@
 // backend/src/controllers/event.controller.ts
-import { Response } from 'express';
+import { Request, Response } from 'express'; // <-- Added Request here!
 import { AuthRequest } from '../middleware/auth';
 import { dbPool } from '../db';
 
@@ -86,5 +86,67 @@ export const registerForEvent = async (req: AuthRequest, res: Response): Promise
         res.status(500).json({ error: 'SYSTEM_HALT: Critical data engine collision.' });
     } finally {
         client.release();
+    }
+};
+
+export const getEventDashboard = async (req: AuthRequest, res: Response): Promise<void> => {
+    const { id } = req.params; 
+
+    try {
+        const eventQuery = 'SELECT title, max_capacity, current_occupancy, event_date FROM events WHERE id = $1';
+        const eventResult = await dbPool.query(eventQuery, [id]);
+
+        if (eventResult.rows.length === 0) {
+            res.status(404).json({ error: 'SYSTEM_HALT: Target event mapping does not exist.' });
+            return;
+        }
+
+        const attendeeQuery = `
+            SELECT 
+                u.full_name, 
+                u.email, 
+                er.registration_status,
+                er.registered_at 
+            FROM event_registrations er
+            JOIN users u ON er.user_id = u.id
+            WHERE er.event_id = $1
+            ORDER BY er.registered_at ASC;
+        `;
+        const attendeeResult = await dbPool.query(attendeeQuery, [id]);
+
+        res.status(200).json({
+            status: 'SUCCESS',
+            event_telemetry: eventResult.rows[0],
+            total_attendees: attendeeResult.rowCount,
+            attendee_ledger: attendeeResult.rows
+        });
+    } catch (error) {
+        console.error('[!] Dashboard Aggregation Failure:', error);
+        res.status(500).json({ error: 'SYSTEM_HALT: Internal data aggregation exception.' });
+    }
+};
+
+export const getEventSummaryList = async (req: Request, res: Response) => {
+    try {
+        const query = `
+            SELECT 
+                id AS event_id, 
+                title, 
+                event_date, 
+                current_occupancy, 
+                max_capacity,
+                CASE 
+                    WHEN current_occupancy >= max_capacity THEN 'FULL'
+                    WHEN event_date < NOW() THEN 'ARCHIVED'
+                    ELSE 'OPEN'
+                END as status
+            FROM events 
+            ORDER BY event_date ASC
+        `;
+        const result = await dbPool.query(query);
+        res.status(200).json(result.rows);
+    } catch (error) {
+        console.error("Event Summary List Error:", error);
+        res.status(500).json({ error: "Internal Server Error" });
     }
 };
