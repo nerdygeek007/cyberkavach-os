@@ -9,6 +9,8 @@ export interface AuthRequest extends Request {
         clearance: number;
         account_status: string;
     };
+    file?: any;
+    files?: any;
 }
 
 export const requireAuth = (req: AuthRequest, res: Response, next: NextFunction): void => {

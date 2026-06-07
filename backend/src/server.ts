@@ -3,10 +3,13 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
+import path from 'path';
 import { dbPool } from './db'; 
 import authRoutes from './routes/auth.routes';
 import eventRoutes from './routes/event.routes';
 import systemRoutes from './routes/system.routes';
+import certificateRoutes from './routes/certificate.routes';
+import pointsRoutes from './routes/points.routes';
 
 dotenv.config();
 
@@ -22,7 +25,9 @@ const PORT = process.env.PORT || 5000;
 // ==========================================
 // ZERO-TRUST MIDDLEWARE BOUNDARIES
 // ==========================================
-app.use(helmet()); 
+app.use(helmet({
+    crossOriginResourcePolicy: { policy: "cross-origin" } // Required to let frontend fetch static images/PDFs
+})); 
 
 // EXPANDED CORS VIP LIST
 const allowedOrigins = [
@@ -46,12 +51,17 @@ app.use(cors({
 
 app.use(express.json()); 
 
+// Serve uploads directory statically
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+
 // ==========================================
 // ROUTER MOUNTS
 // ==========================================
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/events', eventRoutes);
 app.use('/api/v1/system', systemRoutes);
+app.use('/api/v1/certificates', certificateRoutes);
+app.use('/api/v1/points', pointsRoutes);
 
 // ==========================================
 // SYSTEM HEALTH & DB VERIFICATION

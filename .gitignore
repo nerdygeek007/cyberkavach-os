@@ -1,0 +1,54 @@
+# Dependency Directories
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Local configuration files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+
+# Build Output
+dist/
+backend/dist/
+frontend/.next/
+frontend/out/
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Application generated files / uploads
+backend/uploads/generated/*
+!backend/uploads/generated/.gitkeep
+backend/uploads/templates/*
+!backend/uploads/templates/.gitkeep
+
+lasr.txt
+test_*.*
+test
+
+extract_docx.py
+convert_sql.py
+
+codebase_analysis.md
+
+*.pdf

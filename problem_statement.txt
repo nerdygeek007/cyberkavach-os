@@ -1,0 +1,288 @@
+
+CYBERKAVACH CLUB
+Problem Statement
+
+
+--- Table ---
+ Smart Club Management SystemOne Unified Platform for Club Operations, Event Management & Member Collaboration
+--- End Table ---
+
+
+Rules
+The deadline for this task is 20–25 days.
+Task submission will be done either through a Google Form or via personal evaluation.
+Students who wish to complete this task in a group can form a team with a maximum of 2 members. Their evaluation will be conducted on a team basis.
+Students who wish to complete this task individually will be evaluated accordingly.
+Students from 2nd Semester (25 Batch) will be given proper time due to their university examinations. However, they must send their Name, Student ID, and Reason to the email ID: 24cs040@charusat.edu.in.
+If anyone needs additional guidance or wants to know more about the CyberKavach Club, feel free to email or DM at:📧 24cs040@charusat.edu.in📞 9601838590
+1. Background & Context
+CyberKavach Club is a student-run technical and cybersecurity community. As the club has grown in membership and activity, the operational complexity has scaled in tandem. Currently, every workflow — approvals, event registrations, certificate issuance, attendance tracking, content approvals, and coordinator management — runs through a fragmented mix of WhatsApp groups, Google Forms, Excel sheets, and informal personal communication.
+
+This fragmentation produces systemic problems:
+Approval delays due to unclear escalation chains and missed messages
+Duplicate event registrations and inconsistent participant records
+Manual certificate generation that takes days for large cohorts
+No visibility into approval status for members or coordinators
+No formal recognition or reward system for volunteer contributions
+Coordinators across technical, content, and social media verticals work in silos
+Students have no centralized portal to register for events, form teams, or track their history
+
+2. Problem Statement
+
+--- Table ---
+Design and develop a centralized, role-based web platform that serves as the complete digital operating system for CyberKavach Club — enabling streamlined approvals, event management, certificate automation, live attendance tracking, multi-coordinator workflows, and a member recognition system, all accessible through role-specific dashboards with real-time visibility.
+--- End Table ---
+
+
+3. Objectives
+Deliver a secure, role-gated login system with distinct dashboards per user type.
+Implement a structured multi-level approval workflow that mirrors actual club hierarchy.
+Automate bulk certificate generation to eliminate manual effort for 300+ participants.
+Provide a live event check-in/check-out system with real-time attendance dashboards.
+Build a team-based event registration system with leader-member management.
+Create a gamified appreciation and reward point system to recognize contributions.
+Offer meaningful analytics and reporting for faculty and student coordinators.
+Ensure the platform is scalable, maintainable, and extensible for future club needs.
+
+4. User Roles & Access Matrix
+The system must support the following seven distinct roles with clearly separated permissions and dashboards:
+
+
+--- Table ---
+Role | Responsibilities | Access Level | Approval Power
+Faculty Coordinator | Final approval authority, full analytics, appreciation assignment, policy control | Full system access | Final approver
+Student Coordinator | Event creation, team management, certificate generation, day-to-day approvals, leaderboard | High-level access | Level 2 approver
+Tech Coordinator | Technical resource requests, repo/tool access, technical event management, IT support tasks | Technical module access | Internal approvals
+Content Coordinator | Blog posts, write-ups, newsletters, content calendar, content approval pipeline | Content module access | Content approvals
+Social Media Coord. | Post scheduling, campaign approvals, certificate sharing, social analytics | Social media module | Social approvals
+Club Member | Submit requests, register for events, view own dashboard, points & certificates, volunteering | Member dashboard | No approval power
+Student /participants (Guest/New) | Register, browse events, submit interest forms, create account | Public + registration | None
+--- End Table ---
+
+
+4.1 Role Hierarchy & Approval Chain
+Request escalation follows this hierarchy: (only for coordinators and club members)
+
+
+
+--- Table ---
+Club Member | → | Tech / Content / Social/Mang. Coord. | → | Student Coordinator | → | Faculty Coordinator
+--- End Table ---
+
+
+5. System Modules
+
+
+--- Table ---
+MODULE 1 — Role-Based Authentication & Multi-Level Approval Workflow       (36 points)
+--- End Table ---
+
+
+5.1.1 Secure Authentication
+Login system supporting all seven roles with role-based dashboard routing
+First-time users can self-register; accounts require coordinator approval before activation
+JWT-based session management with token refresh and secure logout
+Password reset via email OTP verification
+Optional: SSO integration with institutional email (Google OAuth)         (extra 3 points)
+
+5.1.2 Permission Request System
+Users can raise the following request types through the platform:
+Event Permission Request — for organizing or conducting events
+Resource/Venue Access Request — booking classrooms, equipment, or lab access
+Budget Approval Request — financial requirements for events or activities
+Social Media Posting Approval — campaign posts, announcements
+Content Publishing Approval — articles, newsletters, write-ups
+Certificate Generation Authorization — bulk issuance permission
+External Collaboration Request — guest speakers, partner clubs          (extra 2 points)
+ 
+5.1.3 Live Request Tracking & Timeline
+Every request shows a status badge: Pending / Under Review / Approved / Rejected
+Full approval timeline: who acted, at what stage, with timestamp
+In-app notifications and optional email alerts on status changes
+Coordinators can add remarks/comments at each approval step
+Escalation alerts if a request is idle beyond a configurable threshold (e.g., 48 hours)
+Make sure This process should only be visible to the person who submitted the approval request and to the Student Coordinator and Faculty Coordinator. Other coordinators and club members should not be able to view it.
+
+
+
+
+--- Table ---
+MODULE 2 — Smart Certificate Generation System        (36 points)
+--- End Table ---
+
+
+5.2.1 Template & Participant Management
+Upload and preview multiple certificate templates (PNG/PDF)
+Import participant data via Excel/CSV with field mapping UI
+Fields: Participant Name, Event Name ,Certificate ID
+Data validation layer — flag missing or malformed entries before generation
+
+5.2.2 Bulk Generation & Export
+Auto-generate 300+ certificates in one job with dynamic text placement
+Progress tracker displayed during generation
+Download as ZIP folder or individual preview
+Auto-upload to Google Drive folder with shareable link
+Email certificates directly to participants from within the platform (optional)      (extra 5 points)
+
+5.2.3 Certificate Verification System
+Unique auto-generated Certificate ID per certificate
+Verification page confirms: Name, Event, Date, Issuing Authority
+Tamper detection — verification fails if certificate has been modified
+Authorized to Generate: Student Coordinator, Social Media Coordinator (with Student Coordinator approval).
+
+
+--- Table ---
+MODULE 3 — Event Registration & Team Management System  (36 points)
+--- End Table ---
+
+
+5.3.1 Event Creation (Coordinators)
+Create events with: Name, Description, Date & Time, Venue, Registration Deadline ,event posters, Team Size, Rules, Tags , etc..
+Events remain Draft until published; publishing requires Student Coordinator sign-off
+Shareable public registration link generated per event (Make sure the system/link can also be accessed and opened properly in a web browser)
+Event poster upload and banner display on the portal
+
+5.3.2 Team Registration & Management
+Students can register individually or form teams
+Team Leader creates team name, searches and adds members by username or email or student id (This team member searching option should only happen after all team members have completed their registration in the system )
+Team history preserved — reuse prior teams for future events in one click
+Auto-generated Team ID and Team QR Code upon final submission (this QR code is use for team check in- check out time)
+Confirmation email with team details(team unique id and QR code) sent to Team Leader
+Students and faculty Coordinators can view, edit, or override team compositions
+
+5.3.3 Coordinator Event Dashboard
+Real-time registration count with capacity indicator
+Filterable participant/team table with export to CSV/Excel
+Event analytics: registrations over time, team size distribution, waitlist status
+Duplicate detection — flags if same user registers twice
+
+
+--- Table ---
+MODULE 4 — Event Check-In & Check-Out Attendance System    (36 points)
+--- End Table ---
+
+
+5.4.1 Check-In Mechanisms
+Manual Team QR code entry by coordinator at event entry point
+QR code scanning (mobile-friendly) for faster check-in
+Individual member check-in support for non-team events
+
+5.4.2 Attendance Records & Live Dashboard
+Real-time dashboard showing: Checked-In, Pending Arrival, Checked-Out, Total Count
+Timestamps logged for every check-in and check-out action
+Late arrival and early exit flags configurable per event
+Post-event attendance report downloadable by Faculty or Student Coordinator
+Attendance linked to member/participants profiles — feeds into Appreciation System
+
+
+--- Table ---
+MODULE 5 — Appreciation, Reward Points & Recognition System(36 points)
+--- End Table ---
+
+
+5.5.1 Appreciation Assignment
+Faculty Coordinator and Student Coordinator can assign appreciation points post-event
+Points can be assigned to any member with a category tag and remarks
+Recognition categories: Best Coordinator, Best Volunteer, Technical Contribution, Creative Contribution, Event Management Excellence, Community Builder, Innovation Award
+Point deduction possible for policy violations (with mandatory remarks)
+
+5.5.2 Member Recognition Dashboard
+Each club member or other coordinators dashboard displays: Total Points, Contribution History, Badges Earned, Event Participation Log
+Achievement badges awarded automatically at point milestones
+Leaderboard showing Top Contributors, Most Active Members, Best Coordinators
+Semester/annual recognition report exportable by Faculty Coordinator or student coordinators
+
+
+
+--- Table ---
+MODULE 6 — Analytics, Notifications & Platform Settings    (20 points)
+--- End Table ---
+
+
+5.6.1 Analytics Dashboard
+Faculty Coordinator: full club-wide analytics — event frequency, member growth, approval cycle times, certificate volumes
+Student Coordinator: operational metrics — registrations, attendance rates, pending requests, content pipeline status
+Exportable reports in PDF and CSV formats 
+
+5.6.2 Notification System
+In-app notifications for all request status changes
+Email notifications for critical events: approvals, rejections, event reminders        (extra 5 points)
+Configurable notification preferences per user
+
+5.6.3 Platform Administration
+Faculty Coordinator can manage user accounts, roles, and permissions
+Audit log: all significant actions logged with user, timestamp, and context
+Club settings: academic year, event categories, point policies
+
+6. Suggested Technology Stack
+
+--- Table ---
+Layer | Recommended Stack | Purpose / Notes
+Frontend | React.js / Next.js + TailwindCSS | Responsive UI, SSR for performance, component-based architecture
+Backend | Node.js + Express.js | RESTful API layer, middleware for auth, file handling
+Database | PostgreSQL (primary) + Redis (cache) | Relational data for users/events; Redis for sessions & real-time
+Authentication | JWT + Firebase Auth (optional) | Secure token-based auth; Firebase for Google OAuth
+Certificates | Puppeteer / pdf-lib + Sharp | Pixel-perfect certificate rendering and image manipulation
+File Storage | Google Drive API / AWS S3 / Cloudinary | Certificate storage, template uploads, media assets
+Real-Time | Socket.io / WebSockets | Live check-in dashboard, approval status updates
+Email | Nodemailer + SendGrid / SMTP | Transactional emails: OTPs, approvals, certificates
+QR Codes | qrcode.js / ZXing | Certificate QR generation and scanning at events
+Deployment | Vercel / Railway / Render + Docker | CI/CD pipeline; containerized deployment recommended
+--- End Table ---
+
+
+7. Expected Deliverables
+Fully working web application hosted on a public URL
+Role-based dashboards for all 7 defined roles
+Complete approval workflow with multi-level routing and timeline tracking
+Event registration and team management system
+Bulk certificate generation with verification 
+Live attendance check-in/check-out system
+Content and social media coordinator approval pipelines
+Tech coordinator resource management module
+Appreciation and reward points system with leaderboard
+Analytics dashboards with exportable reports
+Well-structured source code repository (GitHub) with a clear README
+
+8. Evaluation Criteria
+
+--- Table ---
+Evaluation Criteria | Marks
+Functionality & Workflow Completeness — All modules operational end-to-end | 35
+UI/UX Design — Clarity, responsiveness, role-specific dashboard quality | 30
+Database & Backend Architecture — Schema design, query efficiency, API logic | 40
+Code Quality — Readability, modularity, documentation, error handling | 40
+Security Implementation — Auth, input validation, role enforcement, audit log | 30
+Innovation & Additional Features — Bonus features, integrations, polish | 25 (extra points)
+TOTAL | 175 + 25(extra if you can add new features) = 200
+--- End Table ---
+
+
+
+
+9. Constraints & Assumptions
+The platform is a web-based application accessible via modern browsers on desktop and mobile.
+Role assignments are managed by Faculty Coordinator and Student Coordinator.
+Certificate templates are uploaded as PNG or PDF by authorized coordinators.
+The system does not integrate with external payment gateways in the base version.
+All data is scoped to CyberKavach Club — multi-club support is optional/bonus.
+Email delivery assumes a configured SMTP server or third-party email API.
+
+10. Optional / Bonus Features
+Mobile app (React Native / PWA) for on-the-go check-in and notifications
+AI-assisted certificate template suggestions based on event type
+Automated social media post drafts using AI for approved content
+Integration with Google Calendar for event reminders
+Club newsletter auto-generation from approved content items
+Multi-club support with isolated data namespaces
+Dark mode and theme customization per club branding
+
+11. Evaluation Process
+Module-wise marking will be conducted. Modules 1 to 5 carry 36 points each, and Module 6 carries 20 points. Therefore, the total marks for all modules together are 200 points.
+Code and design-based marking will be done according to the table above, which contains the detailed marking criteria. This section carries a total of 175 points.
+Participants who add new features to the system will receive an additional 25 points.
+Hence, the overall evaluation will be conducted out of a total of 400 points.
+The top 2 performers may be selected as Tech Coordinators.
+
+END OF PROBLEM STATEMENT
+Good luck to all participants. Build something the club will actually use.
