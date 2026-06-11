@@ -33,11 +33,11 @@ export default function BadgesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Badges & Achievements
         </h1>
 
@@ -49,11 +49,11 @@ export default function BadgesPage() {
 
         <div className="mb-10">
 
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
             Earned Badges
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-6 responsive-grid-3">
 
             {earnedBadges.map((badge) => (
               <div
@@ -86,14 +86,14 @@ export default function BadgesPage() {
             In Progress
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-6 responsive-grid-2">
 
             {lockedBadges.map((badge) => (
               <div
                 key={badge.name}
                 className="bg-slate-900 rounded-xl p-6"
               >
-                <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center gap-4 mb-4 responsive-flex">
 
                   <div className="text-5xl opacity-50">
                     {badge.icon}

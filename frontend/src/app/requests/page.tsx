@@ -23,14 +23,14 @@ export default function RequestsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-8 responsive-flex">
 
           <div>
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-3xl md:text-5xl font-bold">
               My Requests
             </h1>
 
@@ -41,7 +41,7 @@ export default function RequestsPage() {
 
           <a
             href="/requests/create"
-            className="bg-green-500 text-black px-5 py-3 rounded-lg font-bold"
+            className="bg-green-500 text-black px-5 py-3 rounded-lg font-bold responsive-button"
           >
             + New Request
           </a>
@@ -50,7 +50,8 @@ export default function RequestsPage() {
 
         <div className="bg-slate-900 rounded-xl overflow-hidden">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead className="bg-slate-800">
 
@@ -127,6 +128,7 @@ export default function RequestsPage() {
 
       </div>
 
+    </div>
     </div>
   );
 }

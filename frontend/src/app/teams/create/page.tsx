@@ -20,11 +20,11 @@ export default function CreateTeamPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-4xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Create Team
         </h1>
 
@@ -32,7 +32,7 @@ export default function CreateTeamPage() {
           Build your event team
         </p>
 
-        <div className="bg-slate-900 rounded-xl p-8">
+        <div className="bg-slate-900 rounded-xl p-4 md:p-8">
 
           {/* Team Name */}
 
@@ -61,7 +61,7 @@ export default function CreateTeamPage() {
               Add Member
             </label>
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 responsive-flex">
 
               <input
                 value={search}
@@ -74,7 +74,7 @@ export default function CreateTeamPage() {
 
               <button
                 onClick={addMember}
-                className="bg-green-500 text-black px-5 rounded-lg font-bold"
+                className="bg-green-500 text-black px-5 rounded-lg font-bold responsive-button"
               >
                 Add
               </button>
@@ -96,7 +96,7 @@ export default function CreateTeamPage() {
               {members.map((member, index) => (
                 <div
                   key={index}
-                  className="bg-slate-800 rounded-lg p-4 flex justify-between"
+                  className="bg-slate-800 rounded-lg p-4 flex justify-between responsive-flex"
                 >
                   <span>{member}</span>
 
@@ -111,7 +111,7 @@ export default function CreateTeamPage() {
           </div>
 
           <button
-            className="w-full bg-green-500 text-black py-4 rounded-lg font-bold"
+            className="w-full bg-green-500 text-black py-4 rounded-lg font-bold responsive-button"
           >
             Create Team
           </button>

@@ -20,11 +20,11 @@ export default function TeamDetailsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-5xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Team Details
         </h1>
 
@@ -32,7 +32,7 @@ export default function TeamDetailsPage() {
           Team Management Dashboard
         </p>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 gap-8 responsive-grid-3">
 
           {/* Left */}
 
@@ -40,7 +40,7 @@ export default function TeamDetailsPage() {
 
             <div className="bg-slate-900 rounded-xl p-6 mb-6">
 
-              <h2 className="text-3xl font-bold">
+              <h2 className="text-2xl md:text-3xl font-bold">
                 {team.name}
               </h2>
 
@@ -63,7 +63,7 @@ export default function TeamDetailsPage() {
 
                 <p>
                   <strong>Status:</strong>{" "}
-                  <span className="bg-green-500 text-black px-3 py-1 rounded-full">
+                  <span className="bg-green-500 text-black px-3 py-1 rounded-full responsive-button">
                     {team.status}
                   </span>
                 </p>
@@ -105,11 +105,11 @@ export default function TeamDetailsPage() {
                 Team QR Code
               </h2>
 
-              <div className="h-64 bg-slate-800 rounded-xl flex items-center justify-center text-center">
+              <div className="h-48 md:h-64 bg-slate-800 rounded-xl flex items-center justify-center text-center">
                 QR CODE
               </div>
 
-              <button className="w-full mt-6 bg-green-500 text-black py-3 rounded-lg font-bold">
+              <button className="w-full mt-6 bg-green-500 text-black py-3 rounded-lg font-bold responsive-button">
                 Download QR
               </button>
 

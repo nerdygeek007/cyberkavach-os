@@ -8,15 +8,15 @@ import {
   
   export default function Sidebar() {
     return (
-      <div className="w-72 h-screen bg-[#111827] border-r border-green-500/20 p-6">
+      <div className="w-full md:w-72 min-h-screen bg-[#111827] border-r border-green-500/20 p-4 md:p-6">
   
-        <div className="mb-10">
+        <div className="mb-6 md:mb-10">
   
           <p className="text-green-400 font-mono text-xs">
             CYBERKAVACH_OS
           </p>
   
-          <h1 className="text-3xl font-bold text-white mt-2">
+          <h1 className="text-2xl md:text-3xl font-bold text-white mt-2">
             CyberKavach
           </h1>
   

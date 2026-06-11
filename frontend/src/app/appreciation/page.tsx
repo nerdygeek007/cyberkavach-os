@@ -23,7 +23,7 @@ export default function AppreciationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
@@ -35,7 +35,7 @@ export default function AppreciationPage() {
           Rewards, Recognition & Contributions
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-3 gap-6 mb-8 responsive-grid-3">
 
           <div className="bg-slate-900 rounded-xl p-6">
             <p className="text-gray-400">
@@ -75,7 +75,7 @@ export default function AppreciationPage() {
             Achievement Badges
           </h2>
 
-          <div className="grid md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-4 responsive-grid-4">
 
             <div className="bg-slate-800 p-5 rounded-xl text-center">
               🏆
@@ -111,7 +111,8 @@ export default function AppreciationPage() {
 
         <div className="bg-slate-900 rounded-xl overflow-hidden">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead className="bg-slate-800">
               <tr>
@@ -165,6 +166,8 @@ export default function AppreciationPage() {
         </div>
 
       </div>
+
+    </div>
 
     </div>
   );

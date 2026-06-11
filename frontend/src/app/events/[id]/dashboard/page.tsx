@@ -26,7 +26,7 @@ export default function EventTelemetryDashboard() {
   const maxCapacity = 100;
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
@@ -45,7 +45,7 @@ export default function EventTelemetryDashboard() {
 
         {/* Status Cards */}
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-3 gap-6 mb-8 responsive-grid-3">
 
           <div className="bg-slate-900 p-6 rounded-xl">
             <p className="text-gray-400">
@@ -108,77 +108,81 @@ export default function EventTelemetryDashboard() {
 
         <div className="bg-slate-900 rounded-xl p-6">
 
-          <div className="flex justify-between mb-6">
+        <div className="flex justify-between mb-6 responsive-flex">
 
             <h2 className="text-2xl font-bold">
               Attendee Ledger
             </h2>
 
-            <button className="bg-green-500 text-black px-4 py-2 rounded-lg font-bold">
+            <button className="bg-green-500 text-black px-4 py-2 rounded-lg font-bold responsive-button">
               Download CSV
             </button>
 
           </div>
 
+          <div className="responsive-table">
+
+          <div className="responsive-table">
           <table className="w-full">
 
-            <thead>
+    <thead>
 
-              <tr className="border-b border-slate-700">
+      <tr className="border-b border-slate-700">
 
-                <th className="text-left py-3">
-                  Name
-                </th>
+        <th className="text-left py-3">
+          Name
+        </th>
 
-                <th className="text-left py-3">
-                  Email
-                </th>
+        <th className="text-left py-3">
+          Email
+        </th>
 
-                <th className="text-left py-3">
-                  Status
-                </th>
+        <th className="text-left py-3">
+          Status
+        </th>
 
-                <th className="text-left py-3">
-                  Registered At
-                </th>
+        <th className="text-left py-3">
+          Registered At
+        </th>
 
-              </tr>
+      </tr>
 
-            </thead>
+    </thead>
 
-            <tbody>
+    <tbody>
 
-              {attendees.map((person) => (
-                <tr
-                  key={person.email}
-                  className="border-b border-slate-800"
-                >
-                  <td className="py-4">
-                    {person.name}
-                  </td>
+      {attendees.map((person) => (
+        <tr
+          key={person.email}
+          className="border-b border-slate-800"
+        >
+          <td className="py-4">
+            {person.name}
+          </td>
 
-                  <td className="py-4">
-                    {person.email}
-                  </td>
+          <td className="py-4">
+            {person.email}
+          </td>
 
-                  <td className="py-4">
-                    {person.status}
-                  </td>
+          <td className="py-4">
+            {person.status}
+          </td>
 
-                  <td className="py-4">
-                    {person.registeredAt}
-                  </td>
-                </tr>
-              ))}
+          <td className="py-4">
+            {person.registeredAt}
+          </td>
+        </tr>
+      ))}
 
-            </tbody>
+    </tbody>
 
-          </table>
+  </table>
 
-        </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
 
-      </div>
-
-    </div>
-  );
+);
 }

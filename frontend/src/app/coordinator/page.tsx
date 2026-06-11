@@ -42,15 +42,15 @@ export default function CoordinatorPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0f1c] p-10">
+    <div className="min-h-screen bg-[#0a0f1c] p-10 responsive-padding">
 
-      <h1 className="text-4xl text-white font-bold mb-8">
+      <h1 className="text-4xl md:text-4xl text-white font-bold mb-8">
         Create Event
       </h1>
 
       <form
         onSubmit={handleSubmit}
-        className="max-w-3xl space-y-4"
+        className="max-w-3xl space-y-4 w-full"
       >
 
         <input
@@ -165,7 +165,7 @@ export default function CoordinatorPage() {
 
         <button
           type="submit"
-          className="bg-green-500 text-black px-6 py-3 rounded font-bold"
+          className="bg-green-500 text-black px-6 py-3 rounded font-bold responsive-button"
         >
           Create Event
         </button>

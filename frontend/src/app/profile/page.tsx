@@ -18,20 +18,20 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
       <div className="max-w-6xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-8">
+        <h1 className="text-3xl md:text-5xl font-bold mb-8">
           My Profile
         </h1>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 gap-8 responsive-grid-3">
 
           {/* Left Card */}
 
           <div className="bg-slate-900 rounded-xl p-6">
 
-            <div className="w-36 h-36 rounded-full bg-slate-700 mx-auto mb-6 flex items-center justify-center text-4xl">
+            <div className="w-24 h-24 md:w-36 md:h-36 rounded-full bg-slate-700 mx-auto mb-6 flex items-center justify-center text-4xl">
               👤
             </div>
 
@@ -70,12 +70,13 @@ export default function ProfilePage() {
               </h3>
 
               <a
-                href={user.github}
-                target="_blank"
-                className="text-green-400"
-              >
-                {user.github}
-              </a>
+  href={user.github}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-green-400 break-all"
+>
+  {user.github}
+</a>
             </div>
 
             <div className="bg-slate-900 rounded-xl p-6">
@@ -108,7 +109,7 @@ export default function ProfilePage() {
                 Resume
               </h3>
 
-              <button className="bg-green-500 text-black px-6 py-3 rounded-lg font-bold">
+              <button className="bg-green-500 text-black px-6 py-3 rounded-lg font-bold responsive-button">
                 Upload Resume
               </button>
             </div>

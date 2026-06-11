@@ -24,4 +24,57 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
- 
+
+/* Mobile Responsive Rules */
+
+@media screen and (max-width: 768px) {
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .responsive-padding {
+    padding: 1rem !important;
+  }
+
+  .responsive-grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .responsive-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .responsive-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .responsive-flex {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .responsive-button {
+    width: 100% !important;
+  }
+
+  .responsive-card {
+    width: 100% !important;
+  }
+
+  .responsive-table {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+}

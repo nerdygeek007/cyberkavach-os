@@ -12,11 +12,11 @@ export default function CreateRequestPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-3xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           New Request
         </h1>
 
@@ -24,7 +24,7 @@ export default function CreateRequestPage() {
           Submit approval requests to coordinators
         </p>
 
-        <div className="bg-slate-900 rounded-xl p-8">
+        <div className="bg-slate-900 rounded-xl p-4 md:p-8">
 
           <div className="space-y-6">
 
@@ -121,7 +121,7 @@ export default function CreateRequestPage() {
 
             <button
               onClick={handleSubmit}
-              className="w-full bg-green-500 text-black py-4 rounded-lg font-bold"
+              className="w-full bg-green-500 text-black py-4 rounded-lg font-bold responsive-button"
             >
               Submit Request
             </button>

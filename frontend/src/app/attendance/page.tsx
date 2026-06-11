@@ -26,7 +26,7 @@ export default function AttendancePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
@@ -40,7 +40,7 @@ export default function AttendancePage() {
 
         {/* Stats */}
 
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-4 gap-6 mb-8 responsive-grid-4">
 
           <div className="bg-slate-900 p-6 rounded-xl">
             <p className="text-gray-400">
@@ -88,7 +88,8 @@ export default function AttendancePage() {
 
         <div className="bg-slate-900 rounded-xl overflow-hidden">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead className="bg-slate-800">
 
@@ -161,13 +162,13 @@ export default function AttendancePage() {
 
         </div>
 
-        <div className="mt-8 flex gap-4">
+        <div className="mt-8 flex gap-4 responsive-flex">
 
-          <button className="bg-green-500 text-black px-5 py-3 rounded-lg font-bold">
+          <button className="bg-green-500 text-black px-5 py-3 rounded-lg font-bold responsive-button">
             Export CSV
           </button>
 
-          <button className="bg-blue-500 text-white px-5 py-3 rounded-lg font-bold">
+          <button className="bg-blue-500 text-white px-5 py-3 rounded-lg font-bold responsive-button">
             Export PDF
           </button>
 
@@ -175,6 +176,7 @@ export default function AttendancePage() {
 
       </div>
 
+    </div>
     </div>
   );
 }

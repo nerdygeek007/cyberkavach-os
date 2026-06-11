@@ -20,11 +20,11 @@ export default function RoleManagementPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Role Management
         </h1>
 
@@ -34,7 +34,8 @@ export default function RoleManagementPage() {
 
         <div className="bg-slate-900 rounded-xl overflow-hidden">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead className="bg-slate-800">
 
@@ -78,7 +79,7 @@ export default function RoleManagementPage() {
 
                   <td className="p-4">
 
-                    <select className="bg-slate-800 p-2 rounded-lg">
+                    <select className="bg-slate-800 p-2 rounded-lg w-full">
 
                       <option>
                         Club Member
@@ -114,7 +115,7 @@ export default function RoleManagementPage() {
 
                   <td className="p-4">
 
-                    <button className="bg-green-500 text-black px-4 py-2 rounded-lg font-semibold">
+                    <button className="bg-green-500 text-black px-4 py-2 rounded-lg font-semibold responsive-button">
                       Update
                     </button>
 
@@ -131,6 +132,7 @@ export default function RoleManagementPage() {
 
       </div>
 
+    </div>
     </div>
   );
 }

@@ -12,11 +12,11 @@ export default function CheckInPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Event Check-In
         </h1>
 
@@ -26,7 +26,7 @@ export default function CheckInPage() {
 
         {/* Stats */}
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-3 gap-6 mb-8 responsive-grid-3">
 
           <div className="bg-slate-900 rounded-xl p-6">
             <p className="text-gray-400">
@@ -62,7 +62,7 @@ export default function CheckInPage() {
 
         {/* QR Scanner */}
 
-        <div className="bg-slate-900 rounded-xl p-8 mb-8">
+        <div className="bg-slate-900 rounded-xl p-4 md:p-8 mb-8">
 
           <h2 className="text-2xl font-bold mb-6">
             QR Scanner
@@ -76,13 +76,13 @@ export default function CheckInPage() {
 
         {/* Manual Entry */}
 
-        <div className="bg-slate-900 rounded-xl p-8">
+        <div className="bg-slate-900 rounded-xl p-4 md:p-8">
 
           <h2 className="text-2xl font-bold mb-6">
             Manual Team Check-In
           </h2>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 responsive-flex">
 
             <input
               value={teamId}
@@ -93,7 +93,7 @@ export default function CheckInPage() {
               className="flex-1 bg-slate-800 rounded-lg p-4"
             />
 
-            <button className="bg-green-500 text-black px-8 rounded-lg font-bold">
+            <button className="bg-green-500 text-black px-8 rounded-lg font-bold responsive-button">
               Check In
             </button>
 

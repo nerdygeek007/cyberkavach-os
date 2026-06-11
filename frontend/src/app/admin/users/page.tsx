@@ -26,14 +26,14 @@ export default function AdminUsersPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <div className="flex justify-between mb-8">
+        <div className="flex justify-between mb-8 responsive-flex">
 
           <div>
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-3xl md:text-5xl font-bold">
               User Management
             </h1>
 
@@ -46,7 +46,8 @@ export default function AdminUsersPage() {
 
         <div className="bg-slate-900 rounded-xl p-6">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead>
 
@@ -109,13 +110,13 @@ export default function AdminUsersPage() {
 
                   </td>
 
-                  <td className="py-4 flex gap-2">
+                  <td className="py-4 flex gap-2 responsive-flex">
 
-                    <button className="bg-green-500 text-black px-3 py-2 rounded-lg font-semibold">
+                    <button className="bg-green-500 text-black px-3 py-2 rounded-lg font-semibold responsive-button">
                       Approve
                     </button>
 
-                    <button className="bg-red-500 text-white px-3 py-2 rounded-lg font-semibold">
+                    <button className="bg-red-500 text-white px-3 py-2 rounded-lg font-semibold responsive-button">
                       Reject
                     </button>
 
@@ -132,6 +133,7 @@ export default function AdminUsersPage() {
 
       </div>
 
+    </div>
     </div>
   );
 }

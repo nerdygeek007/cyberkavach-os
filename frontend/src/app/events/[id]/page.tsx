@@ -25,7 +25,7 @@ export default function EventDetailsPage() {
     (event.current_registrations / event.max_capacity) * 100;
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
       <div className="max-w-6xl mx-auto">
 
         {/* Banner */}
@@ -33,7 +33,7 @@ export default function EventDetailsPage() {
           EVENT POSTER
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 gap-8 responsive-grid-3">
 
           {/* Left Section */}
           <div className="lg:col-span-2">
@@ -46,7 +46,7 @@ export default function EventDetailsPage() {
               {event.description}
             </p>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 responsive-grid-2">
 
               <div className="bg-slate-900 p-5 rounded-xl">
                 <h3 className="text-green-400 font-semibold">
@@ -92,7 +92,7 @@ export default function EventDetailsPage() {
               </h2>
 
               <div className="mb-4">
-                <div className="flex justify-between mb-2">
+              <div className="flex justify-between mb-2 responsive-flex">
                   <span>Occupancy</span>
                   <span>
                     {event.current_registrations}/
@@ -118,7 +118,7 @@ export default function EventDetailsPage() {
 
               <button
                 onClick={() => setShowModal(true)}
-                className="w-full mt-6 bg-green-500 text-black font-bold py-4 rounded-lg"
+                className="w-full mt-6 bg-green-500 text-black font-bold py-4 rounded-lg responsive-button"
               >
                 Register Now
               </button>

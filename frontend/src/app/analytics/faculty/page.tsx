@@ -23,11 +23,11 @@ export default function FacultyAnalyticsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Faculty Analytics
         </h1>
 
@@ -37,7 +37,7 @@ export default function FacultyAnalyticsPage() {
 
         {/* Overview Cards */}
 
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-4 gap-6 mb-8 responsive-grid-4">
 
           <div className="bg-slate-900 rounded-xl p-6">
             <p className="text-gray-400">
@@ -83,7 +83,7 @@ export default function FacultyAnalyticsPage() {
 
         {/* Club Growth */}
 
-        <div className="bg-slate-900 rounded-xl p-8 mb-8">
+        <div className="bg-slate-900 rounded-xl p-4 md:p-8 mb-8">
 
           <h2 className="text-2xl font-bold mb-6">
             Member Growth Trend
@@ -99,7 +99,8 @@ export default function FacultyAnalyticsPage() {
 
         <div className="bg-slate-900 rounded-xl overflow-hidden">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead className="bg-slate-800">
 
@@ -156,6 +157,7 @@ export default function FacultyAnalyticsPage() {
 
       </div>
 
+    </div>
     </div>
   );
 }

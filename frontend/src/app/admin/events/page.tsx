@@ -29,14 +29,14 @@ export default function AdminEventsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-8 responsive-flex">
 
           <div>
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-3xl md:text-5xl font-bold">
               Event Management
             </h1>
 
@@ -45,7 +45,7 @@ export default function AdminEventsPage() {
             </p>
           </div>
 
-          <button className="bg-green-500 text-black px-5 py-3 rounded-lg font-bold">
+          <button className="bg-green-500 text-black px-5 py-3 rounded-lg font-bold responsive-button">
             + Create Event
           </button>
 
@@ -53,7 +53,8 @@ export default function AdminEventsPage() {
 
         <div className="bg-slate-900 rounded-xl p-6">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead>
 
@@ -118,21 +119,21 @@ export default function AdminEventsPage() {
 
                   </td>
 
-                  <td className="py-4 flex gap-2">
+                  <td className="py-4 flex gap-2 responsive-flex">
 
-                    <button className="bg-blue-500 text-white px-3 py-2 rounded-lg">
+                    <button className="bg-blue-500 text-white px-3 py-2 rounded-lg responsive-button">
                       View
                     </button>
 
-                    <button className="bg-yellow-500 text-black px-3 py-2 rounded-lg">
+                    <button className="bg-yellow-500 text-black px-3 py-2 rounded-lg responsive-button">
                       Edit
                     </button>
 
-                    <button className="bg-green-500 text-black px-3 py-2 rounded-lg">
+                    <button className="bg-green-500 text-black px-3 py-2 rounded-lg responsive-button">
                       Publish
                     </button>
 
-                    <button className="bg-red-500 text-white px-3 py-2 rounded-lg">
+                    <button className="bg-red-500 text-white px-3 py-2 rounded-lg responsive-button">
                       Delete
                     </button>
 
@@ -149,6 +150,7 @@ export default function AdminEventsPage() {
 
       </div>
 
+    </div>
     </div>
   );
 }

@@ -23,14 +23,14 @@ export default function ContentCoordinatorPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-8 responsive-flex">
 
           <div>
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-3xl md:text-5xl font-bold">
               Content Coordinator Dashboard
             </h1>
 
@@ -39,7 +39,7 @@ export default function ContentCoordinatorPage() {
             </p>
           </div>
 
-          <button className="bg-green-500 text-black px-5 py-3 rounded-lg font-bold">
+          <button className="bg-green-500 text-black px-5 py-3 rounded-lg font-bold responsive-button">
             + New Content
           </button>
 
@@ -47,7 +47,7 @@ export default function ContentCoordinatorPage() {
 
         {/* Stats */}
 
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-4 gap-6 mb-8 responsive-grid-4">
 
           <div className="bg-slate-900 p-6 rounded-xl">
             <p className="text-gray-400">Drafts</p>
@@ -83,7 +83,8 @@ export default function ContentCoordinatorPage() {
 
         <div className="bg-slate-900 rounded-xl overflow-hidden">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead className="bg-slate-800">
 
@@ -126,17 +127,17 @@ export default function ContentCoordinatorPage() {
                     {item.status}
                   </td>
 
-                  <td className="p-4 flex gap-2">
+                  <td className="p-4 flex gap-2 responsive-flex">
 
-                    <button className="bg-blue-500 px-3 py-2 rounded-lg">
+                    <button className="bg-blue-500 px-3 py-2 rounded-lg responsive-button">
                       View
                     </button>
 
-                    <button className="bg-green-500 text-black px-3 py-2 rounded-lg">
+                    <button className="bg-green-500 text-black px-3 py-2 rounded-lg responsive-button">
                       Publish
                     </button>
 
-                    <button className="bg-yellow-500 text-black px-3 py-2 rounded-lg">
+                    <button className="bg-yellow-500 text-black px-3 py-2 rounded-lg responsive-button">
                       Edit
                     </button>
 
@@ -153,6 +154,7 @@ export default function ContentCoordinatorPage() {
 
       </div>
 
+    </div>
     </div>
   );
 }

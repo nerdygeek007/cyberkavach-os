@@ -29,11 +29,11 @@ export default function AuditLogsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Audit Logs
         </h1>
 
@@ -43,7 +43,8 @@ export default function AuditLogsPage() {
 
         <div className="bg-slate-900 rounded-xl overflow-hidden">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead className="bg-slate-800">
 
@@ -100,6 +101,7 @@ export default function AuditLogsPage() {
 
       </div>
 
+    </div>
     </div>
   );
 }

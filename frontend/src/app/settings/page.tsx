@@ -8,11 +8,11 @@ export default function SettingsPage() {
     useState(true);
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-4xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Settings
         </h1>
 
@@ -42,7 +42,7 @@ export default function SettingsPage() {
               className="w-full p-4 rounded-lg bg-slate-800"
             />
 
-            <button className="bg-green-500 text-black px-6 py-3 rounded-lg font-bold">
+            <button className="bg-green-500 text-black px-6 py-3 rounded-lg font-bold responsive-button">
               Save Changes
             </button>
 
@@ -58,7 +58,7 @@ export default function SettingsPage() {
             Preferences
           </h2>
 
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-4 responsive-flex">
 
             <span>Dark Mode</span>
 
@@ -77,7 +77,7 @@ export default function SettingsPage() {
 
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center responsive-flex">
 
             <span>Email Notifications</span>
 
@@ -87,7 +87,7 @@ export default function SettingsPage() {
                   !emailNotifications
                 )
               }
-              className={`px-4 py-2 rounded-lg ${
+              className={`px-4 py-2 rounded-lg responsive-button ${
                 emailNotifications
                   ? "bg-green-500 text-black"
                   : "bg-slate-700"
@@ -110,7 +110,7 @@ export default function SettingsPage() {
             Danger Zone
           </h2>
 
-          <button className="bg-red-500 text-white px-6 py-3 rounded-lg">
+          <button className="bg-red-500 text-white px-6 py-3 rounded-lg responsive-button">
             Delete Account
           </button>
 

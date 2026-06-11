@@ -6,15 +6,14 @@ export default function RegisterPage() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-[#0a0f1c] text-white flex items-center justify-center p-6">
+    <div className="min-h-screen bg-[#0a0f1c] text-white flex items-center justify-center p-6 responsive-padding">
 
-      <div className="w-full max-w-xl bg-[#111827] border border-green-500/20 rounded-2xl p-8 shadow-2xl">
-
+      <div className="w-full max-w-xl bg-[#111827] border border-green-500/20 rounded-2xl p-4 md:p-8 shadow-2xl">
         <p className="text-green-400 font-mono text-sm mb-2">
           {">"} REGISTER USER
         </p>
 
-        <h1 className="text-5xl font-bold mb-8">
+        <h1 className="text-3xl md:text-5xl font-bold mb-8">
           Create Account
         </h1>
 
@@ -52,7 +51,7 @@ export default function RegisterPage() {
 
           <button
             onClick={() => router.push("/dashboard")}
-            className="w-full bg-green-500 text-black font-bold py-3 rounded-lg hover:bg-green-400"
+            className="w-full bg-green-500 text-black font-bold py-3 rounded-lg hover:bg-green-400 responsive-button"
           >
             CREATE ACCOUNT
           </button>

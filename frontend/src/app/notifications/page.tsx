@@ -37,11 +37,11 @@ export default function NotificationsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-5xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Notifications
         </h1>
 
@@ -54,10 +54,10 @@ export default function NotificationsPage() {
           {notifications.map((item) => (
             <div
               key={item.id}
-              className="bg-slate-900 rounded-xl p-6 border border-slate-800"
+              className="bg-slate-900 rounded-xl p-4 md:p-6 border border-slate-800"
             >
 
-              <div className="flex justify-between">
+              <div className="flex justify-between responsive-flex">
 
                 <h2 className="font-bold text-xl">
                   {item.title}

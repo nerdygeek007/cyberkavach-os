@@ -23,11 +23,11 @@ export default function TechCoordinatorPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Tech Coordinator Dashboard
         </h1>
 
@@ -37,7 +37,7 @@ export default function TechCoordinatorPage() {
 
         {/* Stats */}
 
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-4 gap-6 mb-8 responsive-grid-4">
 
           <div className="bg-slate-900 p-6 rounded-xl">
             <p className="text-gray-400">
@@ -85,7 +85,8 @@ export default function TechCoordinatorPage() {
 
         <div className="bg-slate-900 rounded-xl overflow-hidden">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead className="bg-slate-800">
 
@@ -127,7 +128,7 @@ export default function TechCoordinatorPage() {
                   <td className="p-4">
 
                     <span
-                      className={`px-3 py-1 rounded-full text-sm ${
+                      className={`px-3 py-1 rounded-full text-sm responsive-button ${
                         req.status === "Approved"
                           ? "bg-green-500 text-black"
                           : "bg-yellow-500 text-black"
@@ -138,13 +139,13 @@ export default function TechCoordinatorPage() {
 
                   </td>
 
-                  <td className="p-4 flex gap-2">
+                  <td className="p-4 flex gap-2 responsive-flex">
 
-                    <button className="bg-green-500 text-black px-3 py-2 rounded-lg">
+                    <button className="bg-green-500 text-black px-3 py-2 rounded-lg responsive-button">
                       Approve
                     </button>
 
-                    <button className="bg-red-500 text-white px-3 py-2 rounded-lg">
+                    <button className="bg-red-500 text-white px-3 py-2 rounded-lg responsive-button">
                       Reject
                     </button>
 
@@ -161,6 +162,7 @@ export default function TechCoordinatorPage() {
 
       </div>
 
+    </div>
     </div>
   );
 }

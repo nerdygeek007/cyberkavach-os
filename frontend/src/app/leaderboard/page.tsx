@@ -29,7 +29,7 @@ export default function LeaderboardPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
       <div className="max-w-6xl mx-auto">
 
         <h1 className="text-5xl font-bold mb-2">
@@ -42,18 +42,18 @@ export default function LeaderboardPage() {
 
         {/* Top 3 */}
 
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-3 gap-6 mb-10 responsive-grid-3">
 
           {users.slice(0, 3).map((user) => (
             <div
               key={user.rank}
               className="bg-slate-900 rounded-xl p-6 text-center"
             >
-              <div className="text-5xl mb-4">
+              <div className="text-3xl md:text-5xl font-bold mb-2">
                 🏆
               </div>
 
-              <h2 className="text-2xl font-bold">
+              <h2 className="text-xl md:text-2xl font-bold">
                 {user.name}
               </h2>
 
@@ -77,7 +77,8 @@ export default function LeaderboardPage() {
             Global Rankings
           </h2>
 
-          <table className="w-full">
+          <div className="responsive-table">
+  <table className="w-full">
 
             <thead>
               <tr className="border-b border-slate-700">
@@ -120,6 +121,7 @@ export default function LeaderboardPage() {
         </div>
 
       </div>
+    </div>
     </div>
   );
 }

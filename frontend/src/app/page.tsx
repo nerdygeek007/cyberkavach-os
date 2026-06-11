@@ -15,7 +15,7 @@ export default function Home() {
             </p>
           </div>
 
-          <h1 className="text-6xl font-bold text-green-400 mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-green-400 mb-6">
             CyberKavach
           </h1>
 
@@ -74,9 +74,9 @@ export default function Home() {
       </div>
 
       {/* RIGHT PANEL */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-6">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6">
 
-        <div className="w-full max-w-md bg-[#111827] border border-green-500/20 rounded-2xl p-8 shadow-2xl">
+        <div className="w-full max-w-md bg-[#111827] border border-green-500/20 rounded-2xl p-6 md:p-8 shadow-2xl">
 
           <div className="mb-8">
 
@@ -84,7 +84,7 @@ export default function Home() {
               &gt; AUTHENTICATE USER
             </p>
 
-            <h2 className="text-3xl font-bold">
+            <h2 className="text-2xl md:text-3xl font-bold"> 
               Access System
             </h2>
 

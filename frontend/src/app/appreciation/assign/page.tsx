@@ -13,7 +13,7 @@ export default function AssignAppreciationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-3xl mx-auto">
 
@@ -135,7 +135,7 @@ export default function AssignAppreciationPage() {
 
             <button
               onClick={handleAssign}
-              className="w-full bg-green-500 text-black py-4 rounded-lg font-bold"
+              className="w-full bg-green-500 text-black py-4 rounded-lg font-bold responsive-button"
             >
               Assign Appreciation
             </button>

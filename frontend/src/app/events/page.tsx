@@ -29,13 +29,13 @@ export default function EventsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0f1c] p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <h1 className="text-4xl font-bold text-white mb-8">
         Upcoming Events
       </h1>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-6 responsive-grid-3">
 
         {events.map((event) => (
           <EventCard

@@ -6,7 +6,7 @@ export default function GenerateCertificatesPage() {
   const [progress] = useState(65);
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-5xl mx-auto">
 
@@ -67,7 +67,7 @@ export default function GenerateCertificatesPage() {
               Field Mapping
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4 responsive-grid-3">
 
               <select className="bg-slate-800 p-4 rounded-lg">
                 <option>
@@ -95,7 +95,7 @@ export default function GenerateCertificatesPage() {
 
           <div className="mb-8">
 
-            <div className="flex justify-between mb-2">
+            <div className="flex justify-between mb-2 responsive-flex">
               <span>Generation Progress</span>
               <span>{progress}%</span>
             </div>
@@ -113,7 +113,7 @@ export default function GenerateCertificatesPage() {
 
           </div>
 
-          <button className="w-full bg-green-500 text-black py-4 rounded-lg font-bold">
+          <button className="w-full bg-green-500 text-black py-4 rounded-lg font-bold responsive-button">
             Generate Certificates
           </button>
 

@@ -15,11 +15,11 @@ export default function VerifyCertificatePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-4xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Certificate Verification
         </h1>
 
@@ -33,7 +33,7 @@ export default function VerifyCertificatePage() {
             Certificate ID
           </label>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 responsive-flex">
 
             <input
               value={certificateId}
@@ -44,7 +44,7 @@ export default function VerifyCertificatePage() {
               className="flex-1 bg-slate-800 p-4 rounded-lg"
             />
 
-            <button className="bg-green-500 text-black px-8 rounded-lg font-bold">
+            <button className="bg-green-500 text-black px-8 rounded-lg font-bold responsive-button">
               Verify
             </button>
 
@@ -54,13 +54,13 @@ export default function VerifyCertificatePage() {
 
         <div className="bg-slate-900 rounded-xl p-8">
 
-          <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-6 responsive-flex">
 
             <h2 className="text-2xl font-bold">
               Verification Result
             </h2>
 
-            <span className="bg-green-500 text-black px-4 py-2 rounded-full font-semibold">
+            <span className="bg-green-500 text-black px-4 py-2 rounded-full font-semibold responsive-button">
               VERIFIED
             </span>
 

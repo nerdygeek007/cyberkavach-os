@@ -29,11 +29,11 @@ export default function ApprovalsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-7xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Approval Dashboard
         </h1>
 
@@ -43,7 +43,8 @@ export default function ApprovalsPage() {
 
         <div className="bg-slate-900 rounded-xl overflow-hidden">
 
-          <table className="w-full">
+        <div className="responsive-table">
+        <table className="w-full">
 
             <thead className="bg-slate-800">
 
@@ -102,23 +103,23 @@ export default function ApprovalsPage() {
 
                   <td className="p-4">
 
-                    <span className="bg-yellow-500 text-black px-3 py-1 rounded-full">
+                    <span className="bg-yellow-500 text-black px-3 py-1 rounded-full responsive-button">
                       {request.status}
                     </span>
 
                   </td>
 
-                  <td className="p-4 flex gap-2">
+                  <td className="p-4 flex gap-2 responsive-flex">
 
-                    <button className="bg-green-500 text-black px-4 py-2 rounded-lg font-semibold">
+                    <button className="bg-green-500 text-black px-4 py-2 rounded-lg font-semibold responsive-button">
                       Approve
                     </button>
 
-                    <button className="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold">
+                    <button className="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold responsive-button">
                       Reject
                     </button>
 
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold">
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold responsive-button">
                       View
                     </button>
 
@@ -135,6 +136,7 @@ export default function ApprovalsPage() {
 
       </div>
 
+    </div>
     </div>
   );
 }

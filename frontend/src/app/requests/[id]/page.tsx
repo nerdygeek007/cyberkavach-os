@@ -43,11 +43,11 @@ export default function RequestDetailsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020617] text-white p-8">
+    <div className="min-h-screen bg-[#020617] text-white p-8 responsive-padding">
 
       <div className="max-w-5xl mx-auto">
 
-        <h1 className="text-5xl font-bold mb-2">
+        <h1 className="text-3xl md:text-5xl font-bold mb-2">
           Request Details
         </h1>
 
@@ -59,13 +59,13 @@ export default function RequestDetailsPage() {
 
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center responsive-flex">
 
             <h2 className="text-2xl font-bold">
               {request.title}
             </h2>
 
-            <span className="bg-yellow-500 text-black px-4 py-2 rounded-full font-semibold">
+            <span className="bg-yellow-500 text-black px-4 py-2 rounded-full font-semibold responsive-button">
               {request.status}
             </span>
 
@@ -108,7 +108,7 @@ export default function RequestDetailsPage() {
             {timeline.map((item, index) => (
               <div
                 key={index}
-                className="flex gap-4"
+                className="flex gap-4 responsive-flex"
               >
 
                 <div
